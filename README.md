@@ -14,7 +14,7 @@ This is a demo to show-case how to implement an easy date picker in rails using 
 
 - `yarn add flatpickr`
 
-- have a model with the date / date-time
+- have a model with the date
 
 eg.: `rails g model booking restaurant:references booked_at:datetime`
 
@@ -33,7 +33,38 @@ eg.: `rails g model booking restaurant:references booked_at:datetime`
   <% end %>
 ```
 
+- create the javascript init plugin file `app/javascript/plugins/init_flatpickr.js`:
 
+```js
+import flatpickr from "flatpickr";
+
+const initFlatpickr = () => {
+  flatpickr(".datepicker", {});
+};
+
+export { initFlatpickr };
+```
+
+- add some css `app/assets/stylesheets/application.scss`:
+```scss
+@import "flatpickr/dist/flatpickr";
+```
+
+- import and use it `app/javascript/packs/application.js`:
+```js
+// Internal imports, e.g:
+import { initFlatpickr } from '../plugins/init_flatpickr';
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your functions here, e.g:
+  initFlatpickr();
+});
+```
+
+- adjust the input `app/views/bookings/index.html.erb` :
+```erb
+    <%= f.input :booked_at, as: :string, input_html: {class: "datepicker"} %>
+```
 
 And we're good to go
 
