@@ -61,7 +61,7 @@ document.addEventListener('turbolinks:load', () => {
 });
 ```
 
-- adjust the input `app/views/bookings/index.html.erb` :
+- adjust the input in the form `app/views/bookings/index.html.erb` :
 ```erb
     <%= f.input :booked_at, as: :string, input_html: {class: "datepicker"} %>
 ```
