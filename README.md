@@ -12,6 +12,8 @@ This is a demo to show-case how to implement an easy date picker in rails using 
 
 ## What needs to be done?
 
+- `yarn add flatpickr`
+
 - have a model with the date / date-time
 
 eg.: `rails g model booking restaurant:references booked_at:datetime`
@@ -24,12 +26,14 @@ eg.: `rails g model booking restaurant:references booked_at:datetime`
     <%= f.input :booked_at, as: :datetime, html5: true %>
 
     <%# It would work as date as well! %>
-    <%# f.input :booked_at, as: :date, html5: true %>
+    <%# f.input :booked_at, as: :date %>
     
     <%= f.association :restaurant %>
     <%= f.submit %>
   <% end %>
 ```
+
+
 
 And we're good to go
 

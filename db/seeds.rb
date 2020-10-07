@@ -1,14 +1,8 @@
 puts "Create some Restaurants"
 
-address = { 
-  street: "Ladeira da Glória, 8 - Glória",
-  city: "Rio de Janeiro - RJ",
-  country: "Brazil"
-}
-
 [
-  { name: "Amareleen", **address },
-  { name: "Verdeen", **address }
+  { name: "Amareleen" },
+  { name: "Verdeen" }
 ].each(&Restaurant.method(:create!))
 
 # To help with seeding date and datetimes

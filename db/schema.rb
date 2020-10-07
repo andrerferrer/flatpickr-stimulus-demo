@@ -28,11 +28,6 @@ ActiveRecord::Schema.define(version: 2020_08_21_125254) do
     t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.float "latitude"
-    t.float "longitude"
-    t.string "street"
-    t.string "city"
-    t.string "country"
   end
 
   create_table "reviews", force: :cascade do |t|
