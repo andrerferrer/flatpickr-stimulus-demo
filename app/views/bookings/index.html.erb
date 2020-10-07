@@ -18,7 +18,7 @@
 <div class="w-50 m-auto">
   <h2>Create a new booking</h2>
   <%= simple_form_for Booking.new do |f| %>
-    <%= f.input :booked_at, as: :datetime, html5: true %>
+    <%= f.input :booked_at, as: :string, input_html: {class: "datepicker"} %>
 
     <%# It would work as date as well! %>
     <%# f.input :booked_at, as: :date, html5: true %>
