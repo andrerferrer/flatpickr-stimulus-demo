@@ -33,7 +33,7 @@ export default class extends Controller {
   <%= f.input :booked_at, as: :string, input_html: {class: "datepicker", data: { controller: 'flatpickr' } } %>
 ```
 
-- refactor removing the need for a class
+- [refactor removing the need for a class](https://github.com/andrerferrer/flatpickr-stimulus-demo/commit/22c68606999e4fb7c564b9b940ecfa21f7f4efd2)
 
 And we're good to go
 
