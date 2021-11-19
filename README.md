@@ -8,7 +8,32 @@ This demo was created from [this](https://github.com/andrerferrer/flatpickr-demo
 
 ## What needs to be done?
 
+- install stimulus
+```sh
+rails webpacker:install:stimulus
+```
 
+- create a new controller with the same logic
+```js
+// app/javascript/controllers/flatpickr_controller.js
+import { Controller } from "stimulus"
+import flatpickr from "flatpickr";
+
+export default class extends Controller {
+  connect() {
+    flatpickr(".datepicker", {});
+
+  }
+}
+```
+
+- add the data-controller to the input
+```erb
+  <!-- app/views/bookings/index.html.erb -->
+  <%= f.input :booked_at, as: :string, input_html: {class: "datepicker", data: { controller: 'flatpickr' } } %>
+```
+
+- refactor removing the need for a class
 
 And we're good to go
 
