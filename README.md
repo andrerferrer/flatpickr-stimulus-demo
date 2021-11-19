@@ -13,7 +13,7 @@ This demo was created from [this](https://github.com/andrerferrer/flatpickr-demo
 rails webpacker:install:stimulus
 ```
 
-- create a new controller with the same logic
+- create a new controller with the flatpickr logic
 ```js
 // app/javascript/controllers/flatpickr_controller.js
 import { Controller } from "stimulus"
